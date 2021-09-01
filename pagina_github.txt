@@ -1,0 +1,8 @@
+-- GitHub - Página --
+
+<> Code --> Nessa página podemos ver todo o nosso repositorio, podemos verificar as branch's que possui, podemos criar novas branch's, criar tags, verificar o README e LICENSE etc...
+Issues --> Podemos criar tarefas para nossa equipe que está no repositorio.
+Pull requests --> A parte de pull requests e quando finalizamos uma parte do projeto em uma branch separada da master e precisamos quem alguém analise antes de mandar para a master, sendo assim fica em espera do responsavel por administrar o repositorio.
+Exemplo: após fazer uma nova branch e atualizar o projeto ao enviar o push a branch irá aparecer no git hub, com isso é necessário criar um pull requests para analisar.
+Actions -->
+Projects --> KANBAN - backlog, retorno qualidade, teste, homologado, finalizado.

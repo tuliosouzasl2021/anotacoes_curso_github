@@ -1,0 +1,106 @@
+-- Comandos git --
+
+1: Criar um repositório no git hub e seguir os passos abaixo.
+
+- git init // Cria a pasta .git oculta, ou seja, iniciar um projeto.
+// A branch master no git hub se chama main, houve apenas alteração na nomeclatura. //
+- echo "# curso_git_1" >> README.md // Criar uma pasta README.md , porém pode ser qualquer outro arquivo, txt, html etc...
+- git add README.md // Adicionando o primeiro arquivo, nesse caso está utilizando o README.md
+- git commit -m "first commit" // Primeiro Commit
+- git branch -M main // Criando a branch principal, nesse caso era master, porém agora é  main.
+- git remote add origin https://github.com/tlhxfps/curso_git_1.git // Local do remote correto.
+- git push -u origin main // Push na branch main/master.
+
+-- Outros comandos --
+
+- git remote -v // Mostra os remotes desse init.
+- git remote rm origin // remove o remote origin que existe.
+- git status // Verificar o status dos arquivos, commit, push etc...
+- git config --global user.email "you@example.com" // Ao executar o primeiro commit, aparece essas configurações, com isso é  necessario adicionar um e-mail.
+- git config --global user.name "Your Name" // mesma coisa do caso acima, porém nesse caso é necessario adicionar um nome.
+- git status // Monitora arquivos não monitorados, arquivos modificados, arquivos excluidos e criado.
+- git add exemplo.txt // adicionando arquivo exemplo.txt para o repositório criado.
+- git add . // adicionando todos os arquivos da pasta para o repositório.
+- git commit exemplo.txt -m "Enviando arquivo exemplo.txt" // Fazendo o commit do arquivo exemplo.txt
+- git commit -a -m "Enviando todos os commits" // Fazendo o commit de todos os arquivos que foram adicionados.
+- git push // Enviar os commites enviados.
+- git pull // busca atualizações/inclusões e inclui na sua máquina.
+- git clone https://github.com/tlhxfps/curso_git_1.git . // comando que realiza o clone do projeto, o ponto no final apenas para criar na pasta informada.
+- git rm // remove arquivo desnecessário, em seguida é necessário enviar um git commit e git push.
+- git log // verificar os commits enviados.
+- git mv // Renomear e alterar o local de arquivos. exemplo: git mv rodape.css css/rodape.css ou git mv roda_pe.css rodape.css
+- git checkout arquivo.css // Resenta as modificações desse arquivo, com isso ele deixa o arquivo conforme está o git.  
+- git reset --hard origin/main ou origin/master // reseta até o ultimo push, ou seja, todos os commites que enviei sem fazer o push não vão mais existir, pois irá retorna as configurações do ultimo push.
+- git reset --hard <hash> // resentando apartir de uma hash informada.
+
+-- Não comandos --
+
+- .gitignore // criar um arquivo chamado .gitignore e dentro dele incluir os arquivos ou pasta que não serão enviados para o github. exemplos:
+Arquivo: .gitignore 
+Dentro do arquivo: 
+d.txt
+pastateste/* --> ignora todos os arquivos dentro dessa pasta.
+
+-- Comandos Branches --
+
+- git branch // verifica quais branches possui
+- git branch <nome_branch> // cria uma nova branch, lembrando de sempre criar brach apartir da main/master.
+- git branch -D <nome_branch> ou git branch --delete <nome> // deleta uma branch, tomem cuidado, pois esse comando não é muito utilizado.
+- git push --set-upstream origin Branch_v1 // após criar uma branch através da main/master e fazer alguma alteração e enviar o commit, você precisa executar esse comando após o commit, sendo assim essa branch irá para o github.
+- git checkout <nome_branch> // faz com que você troque de branch
+- git checkout -b <nova_branch> // faz com que você mude e crie uma nova branch.
+    Obs: Atenção, nunca mudar de branch antes de fazer o commit na branch que você está usando no momento, pois ao trocar de branch as alterações vão para que você trocou, não a anterior.
+Lembrando também, de sempre criar uma branch através da master/main, pois é la que está o código principal, caso criei em outra branch, as alterações que foram commitadas e push, vao para essa nova branch.
+- git merge <nome_branch> // com esse comando você junta as alterações de uma branch para a que você está no momento, exemplo: possui 2 branch, uma branch_1 e outra branch_2, caso eu faça uma alteração na branch_1 e quero que a branch_2 tenha essa atualização eu faço o merge dentro da banche_2 utilizando o comando git merge branch_1.
+    Obs: tomem cuidado ao fazer esse merge na master/main, caso seja um projeto pessoal ok, porém se for na empresa nunca fazer, pois precisa ser aprovado e testado antes.
+- git stash // funciona como se fosse uma lixeira, exemplo: você faz alguma alteração nessa branch, com isso você vê que está fazendo algumas coisa erras, então você executa esse comando para que essa branch resent porém fique salva as alterações em outro local, sem perdelas.
+- git stash list // mostra a lista de stash criadas acima.
+- git stash apply <numero_da_lista_stash> // aplica as alterações do stash que você criou anteriormente.
+- git stash show -p <numero_da_lista_stash> exemplo: git stash show -p 1 // verifica quais foram as alterações dos arquivos nesse stash.
+- git stash drop <numero_da_lista_stash> exemplo: git stash drop 1 // deleta apenas a stash informada no numero_da_lista_stash
+- git stash clear // exclui todas as stash criada.
+- git tag -a v1.0 -m "Primeira versão" // Esse comando serve para salvar versões de funcionalidade, exemplo, preciso incluir aglumas funcionalidades, inclui a primeira, porém n queria perde essa primeira funcionalidade, nesse caso eu utilizo esse comando para poder salvar e criar uma nova funcionalidade.
+- git tag // lista as tags que possui na branch.
+- git show <nome_da_tag> // Esse comando você verifica as alterações feitas nessa tag.
+- git checkout <nome_da_tag> // você seleciona essa tag, com isso os arquivos alterados e salvados nessa tag irão ficar como o principal do seu projeto.
+    Obs: para você incluir essa tag na branch, você precisa utilizar o comando git merge dentro da master ou qualquer outra branch e colocar a versão, exemplo: git merge v1.0, assim é só enviar com o git push.
+- git push origin <nome_da_tag> // com esse comando você pode enviar a tag para o git hub, não necessariamente a branch, você consegue enviar apenas a tag para outros dev's.
+- git push oring --tags // comando para enviar todas as tags que possui.
+
+-- compartilhamento e atualização --
+
+- git fetch -a // Atualiza todos os branch que possui no github / projeto de todos os dev's, sendo assim eu posso utilizar a branch dele para fazer alguma atualização do meu lado atráves do comando git checkout <nome_da_branch>, após fazer essas atualizações eu posso fazer o commit e o push.
+- git fetch -o <nome_da_branch> // mesmo processo do comando acima, porém esse você coloca o nome da branch que você quer.
+
+-- Observações --
+
+Toda vez que um dev inicia uma tarefa de um projeto ele precisa fazer o git pull na master/main, pois é apartir da branch master que ele irá criar uma branch nova para iniciar uma tarefa nova.
+
+
+- git remote -v // Mostra os remotes desse init.
+- git remote rm origin // remove o remote origin que existe.
+- git remote add origin <url> // link do repositorio que você utiliza, com esse ele adiciona ao seu projeto.
+    Obs: nesse caso é utilizado apenas na hora de trocar a url do git.
+
+- git submodule // verifica os submódulos no seu projeto.
+- git submodule add <link_repositorio> // adiciona um submodule no projeto, lembrando que esse submodule você tem um outro repositorio e você consegue utilizar em seu repositorio atual, como usar comandos de commit,pull e push.
+- git push --recurse-submodules=on-demand // o push do submodule, precisa ser dessa forma.
+
+-- Análises e inspenção --
+
+- git show // irá mostrar as atualizações da branch que você está no momento.
+- git show <nome_da_tag> // da para você verificar as alterações da tag com a branch atual.
+
+- git diff // comando para comparar a branch com a branch que está no repositorio.
+- git diff <nome_da_branch> // mostrar as diferenças que possui entre a branch atual e a informada.
+- git diff HEAD:a.txt a.txt // mostra as diferenças de arquivo que está na sua máquina para a que está o github.
+- git shortlog // mostra o log resumidamente do repositorio, lembrando que esse comando não e definido por branch apenas para o repositorio todo.
+
+
+-- Administração de repositorio --
+
+- git clean ou git clean -f // verificar e limpar os arquivos que não foram adicionados (git add <nome_arquivo> ou git add . (todos arquivos))
+- git gc // é uma abreviação dpara garbage collector e server para otimização de repositorio sem prejudicar o repositorio.
+- git fsck // Verificar integridade dos arquivos no repositorio.
+- git reflog // Mapear todos os seus passos no repositorio, até uma mudança de branch, já o git log apenas armazena os commits de um branch. lembrando que reflogs tem tempo de expiração, o mesmo é 30 dias.
+- git archive --format zip --output master_files.zip <nome_da_branch> // Transformar o repositorio em zip, sendo assim o mesmo irá criar uma arquivo zip em seu projeto local.

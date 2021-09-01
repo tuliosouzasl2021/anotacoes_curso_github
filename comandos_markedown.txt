@@ -1,0 +1,50 @@
+-- Markdown do básico ao avançado --
+
+-> Cabeçalhos (títulos)<-
+
+- # => h1, ## => h2, ### => h3 e assim por diante até o h6 ou seja ###### .
+
+-> Ênfase <-
+
+- Negrito: **teste** ou __texto__
+- Itálico: *texto* ou _texto_
+- Combinando os dois: _um **texto** combinado_
+
+-> Listas <-
+
+- Lista ordenadas: 1. item, 2. item, 3. item e assim a diante.
+- Listar não ordenadas: * item
+
+-> Imagens <-
+
+- inserir imagens: ![Texto alt](link imagem);
+obs: pode está no próprio repo ou ser externa.
+
+-> Links <- 
+
+- Inserir links: [Texto do link](link)
+obs: se for um link github pode ser inserir de forma direta:
+https://www.github.com
+
+-> Imagens e Links <- 
+
+- [![Logo do PHP](https://i.imgur.com/6TaOchz.png)](https://github.com/tlhxfps)
+
+-> Código - GitHub <-
+
+Sintaxe é: ```Linguagem
+Código
+```
+
+Exemplo: ```javascript
+function soma(a,b){
+    return a + b;
+}
+```
+
+-> Task List <- 
+
+Sintaxe para tarefas concluídas: - [X] CSS do rodapé
+Para não concluídas: - [ ] CSS da página de contatos
+
+Esta sintaxe é do markdown especial do github.
