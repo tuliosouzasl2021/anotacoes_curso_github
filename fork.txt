@@ -1,0 +1,7 @@
+---
+Como colaborar em um projeto de github.
+Caso se interesse em algum projeto de github, clique em fork do projeto,
+o mesmo ira para o seu repositorio, a partri deste momento eh possivel
+realizar todo o projeto de branch e push, e o projeto sera atualizado em seu repositorio
+e o dono do projeto podera aceitar ou nao suas atualizacoes.
+---
