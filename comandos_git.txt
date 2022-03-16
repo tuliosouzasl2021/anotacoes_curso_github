@@ -43,6 +43,7 @@ pastateste/* --> ignora todos os arquivos dentro dessa pasta.
 
 -- Comandos Branches --
 
+- git clone -b <nome_branch> <local> // Clona repositorio de uma branch especifica.
 - git branch // verifica quais branches possui
 - git branch <nome_branch> // cria uma nova branch, lembrando de sempre criar brach apartir da main/master.
 - git branch -D <nome_branch> ou git branch --delete <nome> // deleta uma branch, tomem cuidado, pois esse comando não é muito utilizado.
